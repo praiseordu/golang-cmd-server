@@ -26,7 +26,7 @@ Usage
 '''
     Run the server:
 
-    sh go run main.go
+     go run main.go
 
 
 The server will start on port 8080.
@@ -42,10 +42,10 @@ sh
 curl -X POST -H "Content-Type: application/json" -d "{\"command\":\"dir\"}" http://localhost:8080/api/cmd
 
 On Windows PowerShell:
-
 sh
 
-curl -X POST -H "Content-Type: application/json" -d '{\"command\":\"dir\"}' http://localhost:8080/api/cmd
+
+   curl -X POST -H "Content-Type: application/json" -d '{\"command\":\"dir\"}' http://localhost:8080/api/cmd
 
 On Linux/macOS:
 
