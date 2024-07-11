@@ -16,17 +16,18 @@ This project is a simple HTTP server written in Go that executes shell commands 
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/praiseordu/golang-cmd-server.git
+   git clone https://github.com/YOUR_USERNAME/golang-cmd-server.git
    cd golang-cmd-server
 
     Install Go if you haven't already:
         Download and install Go from the official website.
 
 Usage
-'''
+
     Run the server:
 
-     go run main.go
+    sh
+    go run main.go
 
 
 The server will start on port 8080.
@@ -34,18 +35,16 @@ The server will start on port 8080.
 Send a POST request to execute a command:
 
 Use curl or Postman to send a POST request to http://localhost:8080/api/cmd with a JSON body containing the command you want to execute.
-
+```sh
 Example with curl:
-
-sh
 
 curl -X POST -H "Content-Type: application/json" -d "{\"command\":\"dir\"}" http://localhost:8080/api/cmd
 
 On Windows PowerShell:
+
 sh
 
-
-   curl -X POST -H "Content-Type: application/json" -d '{\"command\":\"dir\"}' http://localhost:8080/api/cmd
+curl -X POST -H "Content-Type: application/json" -d '{\"command\":\"dir\"}' http://localhost:8080/api/cmd
 
 On Linux/macOS:
 
