@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"net/http"
 	"os/exec"
-	"strings"
+	"runtime"
+	
 )
 
 type CommandRequest struct {
@@ -18,11 +19,15 @@ type CommandResponse struct {
 }
 
 func executeCommand(cmd string) (string, error) {
-	parts := strings.Fields(cmd)
-	head := parts[0]
-	parts = parts[1:]
+	var out []byte
+	var err error
 
-	out, err := exec.Command(head, parts...).CombinedOutput()
+	if runtime.GOOS == "windows" {
+		out, err = exec.Command("cmd.exe", "/c", cmd).CombinedOutput()
+	} else {
+		out, err = exec.Command("sh", "-c", cmd).CombinedOutput()
+	}
+
 	if err != nil {
 		return string(out), err
 	}
