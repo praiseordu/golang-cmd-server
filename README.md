@@ -23,12 +23,11 @@ This project is a simple HTTP server written in Go that executes shell commands 
         Download and install Go from the official website.
 
 Usage
-
+'''
     Run the server:
 
-    sh
+    sh go run main.go
 
-go run main.go
 
 The server will start on port 8080.
 
